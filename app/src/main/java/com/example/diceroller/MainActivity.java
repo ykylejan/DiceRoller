@@ -11,6 +11,10 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView imageViewDice; //The dice image in xml as variable
+    private ImageView imageViewDice2;
+    private ImageView imageViewDice3;
+
+
     private Random rng = new Random(); //Random number generator
 
     @Override
@@ -19,16 +23,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageViewDice = findViewById(R.id.image_view_dice);
-        final ImageView imageViewDice2 = findViewById(R.id.image_view_dice2);
-        final ImageView imageViewDice3 = findViewById(R.id.image_view_dice3);
+        imageViewDice2 = findViewById(R.id.image_view_dice2);
+        imageViewDice3 = findViewById(R.id.image_view_dice3);
+
         final Button btnRoll = findViewById(R.id.btn_Roll);
         final Button btnRoll2 = findViewById(R.id.btn_Roll2);
-        final Button btnRoll3 = findViewById(R.id.btn_Roll3);
+
+
+        final Button btnRoll_2 = findViewById(R.id.btn_Roll_2);
+        final Button btnRoll_3 = findViewById(R.id.btn_Roll_3);
 
         imageViewDice2.setVisibility(View.INVISIBLE);
         imageViewDice3.setVisibility(View.INVISIBLE);
 
-        btnRoll3.setVisibility(View.INVISIBLE);
+        btnRoll.setVisibility(View.VISIBLE);
+        btnRoll2.setVisibility(View.GONE);
+
+        btnRoll_3.setVisibility(View.INVISIBLE);
 
         btnRoll.setOnClickListener(
                 new View.OnClickListener() {
@@ -52,17 +63,41 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        imageViewDice.setVisibility(View.INVISIBLE);
-                        imageViewDice2.setVisibility(View.VISIBLE);
-                        imageViewDice3.setVisibility(View.VISIBLE);
 
-                        btnRoll2.setVisibility(View.INVISIBLE);
-                        btnRoll3.setVisibility(View.VISIBLE);
+                        try{
+                            Thread.sleep(2000);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        } //Delay 2 seconds
+
+
+                        rollDice2(); //RNG Dice roller from a separate method
+                        rollDice3(); //RNG DICE roller from a separate method
+
                     }
                 }
         );
 
-        btnRoll3.setOnClickListener(
+        btnRoll_2.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        imageViewDice.setVisibility(View.INVISIBLE);
+                        imageViewDice2.setVisibility(View.VISIBLE);
+                        imageViewDice3.setVisibility(View.VISIBLE);
+
+                        btnRoll_2.setVisibility(View.INVISIBLE);
+                        btnRoll_3.setVisibility(View.VISIBLE);
+
+                        btnRoll.setVisibility(View.GONE);
+                        btnRoll2.setVisibility(View.VISIBLE);
+
+
+                    }
+                }
+        );
+
+        btnRoll_3.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -70,8 +105,11 @@ public class MainActivity extends AppCompatActivity {
                         imageViewDice2.setVisibility(View.INVISIBLE);
                         imageViewDice3.setVisibility(View.INVISIBLE);
 
-                        btnRoll2.setVisibility(View.VISIBLE);
-                        btnRoll3.setVisibility(View.INVISIBLE);
+                        btnRoll_2.setVisibility(View.VISIBLE);
+                        btnRoll_3.setVisibility(View.INVISIBLE);
+
+                        btnRoll.setVisibility(View.VISIBLE);
+                        btnRoll2.setVisibility(View.GONE);
                     }
                 }
         );
@@ -102,6 +140,57 @@ public class MainActivity extends AppCompatActivity {
                 imageViewDice.setImageResource(R.drawable.dice6);
                 break;
 
+        }
+    }
+
+    private void rollDice2() {
+        int randomNumber2 = rng.nextInt(6) + 1;
+
+        switch (randomNumber2) {
+            case 1:
+                imageViewDice2.setImageResource(R.drawable.dice1);
+                break;
+            case 2:
+                imageViewDice2.setImageResource(R.drawable.dice2);
+                break;
+            case 3:
+                imageViewDice2.setImageResource(R.drawable.dice3);
+                break;
+            case 4:
+                imageViewDice2.setImageResource(R.drawable.dice4);
+                break;
+            case 5:
+                imageViewDice2.setImageResource(R.drawable.dice5);
+                break;
+            case 6:
+                imageViewDice2.setImageResource(R.drawable.dice6);
+                break;
+
+        }
+    }
+
+    private void rollDice3() {
+        int randomNumber3 = rng.nextInt(6) + 1;
+
+        switch (randomNumber3) {
+            case 1:
+                imageViewDice3.setImageResource(R.drawable.dice1);
+                break;
+            case 2:
+                imageViewDice3.setImageResource(R.drawable.dice2);
+                break;
+            case 3:
+                imageViewDice3.setImageResource(R.drawable.dice3);
+                break;
+            case 4:
+                imageViewDice3.setImageResource(R.drawable.dice4);
+                break;
+            case 5:
+                imageViewDice3.setImageResource(R.drawable.dice5);
+                break;
+            case 6:
+                imageViewDice3.setImageResource(R.drawable.dice6);
+                break;
         }
     }
 }

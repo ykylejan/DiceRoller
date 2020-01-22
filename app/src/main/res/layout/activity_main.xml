@@ -46,6 +46,20 @@
 
     <Button
         android:id="@+id/btn_Roll2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="510dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="173dp"
+        android:text="Roll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_Roll_2"
         android:layout_width="157dp"
         android:layout_height="50dp"
         android:layout_marginStart="164dp"
@@ -59,7 +73,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_Roll3"
+        android:id="@+id/btn_Roll_3"
         android:layout_width="157dp"
         android:layout_height="50dp"
         android:layout_marginStart="164dp"
