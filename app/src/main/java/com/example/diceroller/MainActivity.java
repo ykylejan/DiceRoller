@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         imageViewDice = findViewById(R.id.image_view_dice);
         final Button btnRoll = findViewById(R.id.btn_Roll);
+        final Button btnRoll2 = findViewById(R.id.btn_Roll2);
 
         btnRoll.setOnClickListener(
                 new View.OnClickListener() {
@@ -31,8 +32,19 @@ public class MainActivity extends AppCompatActivity {
                         } catch (Exception e) {
                             e.printStackTrace();
                         } //Delay 2 seconds
+
+
                         rollDice(); //RNG Dice roller from a separate method
 
+                    }
+                }
+        );
+
+        btnRoll2.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        imageViewDice.setVisibility(View.INVISIBLE);
                     }
                 }
         );
