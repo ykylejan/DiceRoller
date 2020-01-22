@@ -19,8 +19,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageViewDice = findViewById(R.id.image_view_dice);
+        final ImageView imageViewDice2 = findViewById(R.id.image_view_dice2);
+        final ImageView imageViewDice3 = findViewById(R.id.image_view_dice3);
         final Button btnRoll = findViewById(R.id.btn_Roll);
         final Button btnRoll2 = findViewById(R.id.btn_Roll2);
+        final Button btnRoll3 = findViewById(R.id.btn_Roll3);
+
+        imageViewDice2.setVisibility(View.INVISIBLE);
+        imageViewDice3.setVisibility(View.INVISIBLE);
+
+        btnRoll3.setVisibility(View.INVISIBLE);
 
         btnRoll.setOnClickListener(
                 new View.OnClickListener() {
@@ -45,6 +53,25 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         imageViewDice.setVisibility(View.INVISIBLE);
+                        imageViewDice2.setVisibility(View.VISIBLE);
+                        imageViewDice3.setVisibility(View.VISIBLE);
+
+                        btnRoll2.setVisibility(View.INVISIBLE);
+                        btnRoll3.setVisibility(View.VISIBLE);
+                    }
+                }
+        );
+
+        btnRoll3.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        imageViewDice.setVisibility(View.VISIBLE);
+                        imageViewDice2.setVisibility(View.INVISIBLE);
+                        imageViewDice3.setVisibility(View.INVISIBLE);
+
+                        btnRoll2.setVisibility(View.VISIBLE);
+                        btnRoll3.setVisibility(View.INVISIBLE);
                     }
                 }
         );
