@@ -3,11 +3,13 @@ package com.example.diceroller;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.Random;
+import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView imageViewDice; //The dice image in xml as variable
@@ -29,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         final Button btnRoll = findViewById(R.id.btn_Roll);
         final Button btnRoll2 = findViewById(R.id.btn_Roll2);
 
-
         final Button btnRoll_2 = findViewById(R.id.btn_Roll_2);
         final Button btnRoll_3 = findViewById(R.id.btn_Roll_3);
 
@@ -41,38 +42,48 @@ public class MainActivity extends AppCompatActivity {
 
         btnRoll_3.setVisibility(View.INVISIBLE);
 
+        Timer timer = new Timer(true);
+
+
         btnRoll.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
-                        try{
-                        Thread.sleep(2000);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        } //Delay 2 seconds
-
-
                         rollDice(); //RNG Dice roller from a separate method
+                        btnRoll.setEnabled(false);
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                btnRoll.setEnabled(true);
+                            }
+                        },2000);
 
                     }
                 }
+
         );
+
 
         btnRoll2.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
-                        try{
-                            Thread.sleep(2000);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        } //Delay 2 seconds
+
 
 
                         rollDice2(); //RNG Dice roller from a separate method
                         rollDice3(); //RNG DICE roller from a separate method
+                        btnRoll2.setEnabled(false);
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                btnRoll2.setEnabled(true);
+                            }
+                        },2000);
 
                     }
                 }
