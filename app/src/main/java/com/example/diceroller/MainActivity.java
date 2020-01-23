@@ -7,9 +7,10 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.Random;
-import java.util.Timer;
+
 
 public class MainActivity extends AppCompatActivity {
     private ImageView imageViewDice; //The dice image in xml as variable
@@ -19,10 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
     private Random rng = new Random(); //Random number generator
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         imageViewDice = findViewById(R.id.image_view_dice);
         imageViewDice2 = findViewById(R.id.image_view_dice2);
@@ -42,13 +46,15 @@ public class MainActivity extends AppCompatActivity {
 
         btnRoll_3.setVisibility(View.INVISIBLE);
 
-        Timer timer = new Timer(true);
+
+
 
 
         btnRoll.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
 
                         rollDice(); //RNG Dice roller from a separate method
                         btnRoll.setEnabled(false);
@@ -65,14 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
         );
 
-
         btnRoll2.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-
-
 
                         rollDice2(); //RNG Dice roller from a separate method
                         rollDice3(); //RNG DICE roller from a separate method
@@ -84,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
                                 btnRoll2.setEnabled(true);
                             }
                         },2000);
+
+
 
                     }
                 }
@@ -131,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
         int randomNumber = rng.nextInt(6) + 1;
         //random number selected according to dice number
 
+
         switch (randomNumber) {
             case 1:
                 imageViewDice.setImageResource(R.drawable.dice1);
@@ -175,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 6:
                 imageViewDice2.setImageResource(R.drawable.dice6);
+
                 break;
 
         }
@@ -204,4 +210,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
 }
