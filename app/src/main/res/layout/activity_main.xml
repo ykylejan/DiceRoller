@@ -4,131 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layout"
     android:background="#181816"
-    tools:context=".MainActivity">
+    tools:context=".Activity2">
 
-
-    <LinearLayout
-        android:layout_width="48dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="363dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="#172484"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
-
-    <ImageView
-        android:id="@+id/image_view_dice2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/dice1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529" />
-
-    <ImageView
-        android:id="@+id/image_view_dice"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/dice1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
-
-    <Button
-        android:id="@+id/btn_Roll"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="510dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginBottom="173dp"
-        android:enabled="true"
-        android:text="Roll"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="553dp"
+        android:text="PACMAN DICE ROLLER"
+        android:textColor="#FAEF37"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_Roll2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="510dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginBottom="173dp"
-        android:enabled="true"
-        android:text="Roll"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_Roll_2"
-        android:layout_width="157dp"
-        android:layout_height="50dp"
+        android:id="@+id/btn_Dice"
+        android:layout_width="191dp"
+        android:layout_height="99dp"
         android:layout_marginStart="164dp"
-        android:layout_marginTop="595dp"
+        android:layout_marginTop="429dp"
         android:layout_marginEnd="159dp"
-        android:layout_marginBottom="88dp"
-        android:text="2 Dices"
+        android:layout_marginBottom="254dp"
+        android:text='LET"S DICE!'
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_Roll_3"
-        android:layout_width="157dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="595dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="88dp"
-        android:text="1 Dice"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/image_view_dice3"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/dice1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079" />
-
-    <LinearLayout
-        android:layout_width="48dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="362dp"
-        android:background="#172484"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
